@@ -1,0 +1,21 @@
+project:
+  name: java-cds
+  description: Spring Boot CLI application with Java Class Data Sharing (CDS)
+  version: 0.0.1
+  authors:
+    - rkiashi-dev
+
+release:
+  github:
+    draft: true
+    prerelease: true
+
+assemble:
+  javaArchive:
+    java-cds:
+      active: ALWAYS
+      archiveName: '{{projectName}}-{{projectVersion}}'
+      formats:
+        - ZIP
+      mainJar:
+        path: target/java-cds-0.0.1-SNAPSHOT.jar

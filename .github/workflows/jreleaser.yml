@@ -1,0 +1,37 @@
+name: JReleaser
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Run JReleaser without publishing a GitHub release
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Build application
+        run: mvn -B -DskipTests package
+
+      - name: Run JReleaser
+        uses: jreleaser/release-action@v2
+        with:
+          arguments: full-release${{ inputs.dry_run && ' --dry-run' || '' }}
+        env:
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
