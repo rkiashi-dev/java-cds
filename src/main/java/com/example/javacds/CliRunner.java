@@ -18,6 +18,8 @@ public class CliRunner implements CommandLineRunner, ExitCodeGenerator {
         try {
             logger.info("Starting CLI application");
             System.out.println("Hello World");
+            CdsHelper.logMemoryUsage();
+            logger.info("[Startup] Application ready in {}ms", CdsHelper.getElapsedMs());
             logger.info("CLI application completed successfully");
         } catch (Exception e) {
             logger.error("Unexpected error occurred", e);

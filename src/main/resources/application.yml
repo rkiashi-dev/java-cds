@@ -3,10 +3,11 @@ spring:
     name: java-cds
   main:
     banner-mode: off
+    web-application-type: none
 
 logging:
   level:
     root: INFO
     com.example.javacds: DEBUG
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSX} [%thread] %-5level %logger{36} - %msg%n"
