@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: java-cds
+  main:
+    web-application-type: none
+
+logging:
+  level:
+    com.example.javacds: INFO
+  pattern:
+    console: '%d{yyyy-MM-dd''T''HH:mm:ss.SSSX} %-5level [%thread] %logger - %msg%n'
