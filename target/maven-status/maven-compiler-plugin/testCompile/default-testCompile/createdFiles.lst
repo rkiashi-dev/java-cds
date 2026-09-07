@@ -1,2 +1,4 @@
 com/example/javacds/JavaCdsApplicationTests.class
+com/example/javacds/GracefulShutdownManagerTest.class
+com/example/javacds/ApplicationLifecycleListenerTest.class
 com/example/javacds/CdsHelperTest.class
