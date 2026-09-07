@@ -13,7 +13,17 @@ public class JavaCdsApplication {
     public static void main(String[] args) {
         logger.info("Starting Java CDS Application");
         CdsHelper.logCdsStatus();
-        var context = SpringApplication.run(JavaCdsApplication.class, args);
-        SpringApplication.exit(context);
+        GlobalExceptionHandler.install();
+        GracefulShutdownManager.registerShutdownHook();
+
+        try {
+            var context = SpringApplication.run(JavaCdsApplication.class, args);
+            int exitCode = SpringApplication.exit(context);
+            logger.info("Application exited with code {}", exitCode);
+            System.exit(exitCode);
+        } catch (Exception ex) {
+            logger.error("Application startup failed", ex);
+            System.exit(1);
+        }
     }
 }
