@@ -11,6 +11,7 @@ public class JavaCdsApplication {
     private static final Logger logger = LoggerFactory.getLogger(JavaCdsApplication.class);
 
     public static void main(String[] args) {
+        logger.info("Starting Java CDS Application");
         CdsHelper.logCdsStatus();
         GlobalExceptionHandler.install();
         GracefulShutdownManager.registerShutdownHook();
