@@ -1,2 +1,4 @@
+/home/runner/work/java-cds/java-cds/src/test/java/com/example/javacds/ApplicationLifecycleListenerTest.java
 /home/runner/work/java-cds/java-cds/src/test/java/com/example/javacds/CdsHelperTest.java
+/home/runner/work/java-cds/java-cds/src/test/java/com/example/javacds/GracefulShutdownManagerTest.java
 /home/runner/work/java-cds/java-cds/src/test/java/com/example/javacds/JavaCdsApplicationTests.java

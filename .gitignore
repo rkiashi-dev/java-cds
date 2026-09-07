@@ -14,6 +14,9 @@ release.properties
 .idea/
 *.iml
 .vscode/
+.settings/
+.classpath
+.project
 *.swp
 *.swo
 

@@ -11,17 +11,19 @@ public class CliRunner implements CommandLineRunner, ExitCodeGenerator {
 
     private static final Logger logger = LoggerFactory.getLogger(CliRunner.class);
 
-    private int exitCode = 0;
+    private int exitCode = ExitCode.SUCCESS.getCode();
 
     @Override
     public void run(String... args) {
         try {
-            logger.info("Hello, World! - Spring Boot CLI with Java CDS");
+            logger.info("Starting CLI application");
+            System.out.println("Hello World");
             CdsHelper.logMemoryUsage();
             logger.info("[Startup] Application ready in {}ms", CdsHelper.getElapsedMs());
+            logger.info("CLI application completed successfully");
         } catch (Exception e) {
-            logger.error("Error during execution", e);
-            exitCode = 1;
+            logger.error("Unexpected error occurred", e);
+            exitCode = ExitCode.ERROR.getCode();
         }
     }
 

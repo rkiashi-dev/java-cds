@@ -23,7 +23,7 @@ public class JavaCdsApplication {
             System.exit(exitCode);
         } catch (Exception ex) {
             logger.error("Application startup failed", ex);
-            System.exit(1);
+            System.exit(ExitCode.CONFIGURATION_ERROR.getCode());
         }
     }
 }
